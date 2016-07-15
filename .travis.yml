@@ -1,0 +1,20 @@
+language: node_js
+node_js: 6.2.2
+
+script:
+  - cp -r source/ build/
+
+deploy:
+  - provider: s3
+    bucket: dash-connect-site
+    region: eu-west-1
+    acl: public_read
+    local_dir: build/
+    skip_cleanup: true
+    access_key_id:
+      secure: VILV76eAX9TW8KEGXil2Lx7xFuEcuaX3jnvloWEdfKPKVta3fp9lNKesPJHlHb9Yp2jP+rgaqhrNFUBpBhk74/kKq+FcIPifH3qn1ZbOJ7Boy8AJBXxVwW4z+sIKXxSOD/gtSRHcS77aY65YTagjH23DYrpMugjX3NBrql+6IEKDJGkIZene4WNL1+ym3WxEtb9t38fTVlclFynvEJgBeDjL3XrqZKzYJf2BD4qhn6mm8MGWyMEh9ZsMOtKPTU5QNPkzUYYGve9IDeA3fTjzjsZmHM5xzegW1iJ4p7WS1mxosJ8xaU4vWE35cJljuD4BLu1scmvzDOQXNMurA2As7g4vukJJkSJho6RST28mqSmcPdumd1E13r9xFnCJGPMtG4uabJ4//itOSA/BCxqJ9nb7WIgm9cfbLZR8uykJey08bOvGqn087USfFQpzuvUsInU3W6dqg83ATIHHV3HCEGK+0uLwwIuIgLiKxhgebWHp+0y+B76L79okmKqPXTf/zWL8SylKpLu/NM8xeMYl3IjQz96TOdU42EdeMPH3kagn2aqdnevo01Pc4+F7ruDc0fnoovwLys/Q11gmbXhoAKM6rbruVuID5se5UD7m1D0K1cRbm8B4+lAEohTJnIz4sJ34gUx3BfofA0+CYvHQL1zwRvgv6+MOBvgGyeDus4M=
+    secret_access_key:
+      secure: qFKsil/t3JY6XL5GJPXrAZFeuw4grA9oPCnZWlv80NgmfUR1xAuPplohQOZxhZDN+oi0t0lQ77CRBoSQlD1pfooj4sxcaGhbev2FTQhkJgotWbA1uJhnXV1EuaiEoJtGG5pUPMkZb/ZgxC29EY5blG+V0mndsnVZOBjXS21apAexb1FNdY0fri4ciIf2EsO4gZq/vN5T1sUS3gYhFCr9a39buOwp4RtfnxJxGnJXDNjUJpXRVck4VALVqXKVb8NOxPNr3/AcLy+2Sr98PXIZdB84MoAQ4ZRaFFjzxlIkYoTM/JTlLbHbb2hzqOthUTzQAmSC1OoWFA/PbrFemuEr+Cccs/d3/4O39IiPadSKOW0HDz3G7HhTLbUIqKjS+57B29anGPkI44EYwD2wS/NYeeTR7t6hHfMQN5Vveomh4ninV0JHQhYLTZqiT1iTt1OjZ2OXasnMTFgBqhOSNp9XpoS6+4jIFZI+yeFOhVA4Yv1EaqSfMLoDLuR8zSuri9QbpHEdGsJB1I6tl698xvLVH5OP2XNZM35EadIPo+/2b8IA/9gjPkakdb2SYkyQgIMHolTuwM6Dni55k5oj4dk16JsOjSbYsmc2n379DBEeu9QuAPZrA2zBFb57o7dbuDG0BglARM67pQINO7WHMVxx+sgHrOcme+qsVuWseH+Jz64=
+
+notifications:
+  email: false

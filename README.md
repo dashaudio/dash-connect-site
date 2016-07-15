@@ -1,2 +1,3 @@
-# dash-connect-site
+# Dash Connect Web Site
+
 Dash Connect web site.
