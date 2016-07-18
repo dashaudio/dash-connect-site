@@ -10,6 +10,7 @@ deploy:
     region: eu-west-1
     acl: public_read
     local_dir: build/
+    upload_dir: $(git describe --tags --always --dirty)
     skip_cleanup: true
     cache_control: public, max-age=86400
     access_key_id:
