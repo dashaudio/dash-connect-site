@@ -1,5 +1,5 @@
 language: node_js
-node_js: 6.2.2
+node_js: 6.3.0
 
 script:
   - cp -r source/ build/
