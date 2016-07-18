@@ -10,7 +10,7 @@ The site is built continuously courtesy of [Travis](https://travis-ci.org/dashau
 
 - Commits: [dashconnect.co/versions/commit/1de7ccd45b8f19de517a0d66fb04cc291ce78f97/](https://dashconnect.co/versions/commit/1de7ccd45b8f19de517a0d66fb04cc291ce78f97/)
 - Branches: [dashconnect.co/versions/branch/master/](https://dashconnect.co/versions/branch/master)
-- Tags: [https://dashconnect.co/versions/tag/v0.0.2/](https://dashconnect.co/versions/tag/v0.0.2/)
+- Tags: [dashconnect.co/versions/tag/v0.0.2/](https://dashconnect.co/versions/tag/v0.0.2/)
 
 The production site at [dashconnect.co](https://dashconnect.co) points to the `production` branch version.
 
