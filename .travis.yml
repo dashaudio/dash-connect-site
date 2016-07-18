@@ -22,6 +22,8 @@ deploy:
     upload_dir: versions/commit/$TRAVIS_COMMIT
   - <<: *deploy
     upload_dir: versions/branch/$TRAVIS_BRANCH
+    on:
+      tags: false
   - <<: *deploy
     upload_dir: versions/tag/$TRAVIS_TAG
     on:
