@@ -1,6 +1,6 @@
-# Dash Connect Web Site
+# 🌍 Dash Connect Web Site
 
-[![Build Status](https://travis-ci.org/dashaudio/dash-connect-site.svg?branch=master)](https://travis-ci.org/dashaudio/dash-connect-site)
+[![Build Status](https://travis-ci.org/dashaudio/dash-connect-site.svg?branch=production)](https://travis-ci.org/dashaudio/dash-connect-site)
 
 Dash Connect main marketing web site.
 
