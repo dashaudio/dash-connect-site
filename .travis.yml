@@ -11,6 +11,7 @@ deploy:
     acl: public_read
     local_dir: build/
     skip_cleanup: true
+    cache_control: public, max-age=86400
     access_key_id:
       secure: VILV76eAX9TW8KEGXil2Lx7xFuEcuaX3jnvloWEdfKPKVta3fp9lNKesPJHlHb9Yp2jP+rgaqhrNFUBpBhk74/kKq+FcIPifH3qn1ZbOJ7Boy8AJBXxVwW4z+sIKXxSOD/gtSRHcS77aY65YTagjH23DYrpMugjX3NBrql+6IEKDJGkIZene4WNL1+ym3WxEtb9t38fTVlclFynvEJgBeDjL3XrqZKzYJf2BD4qhn6mm8MGWyMEh9ZsMOtKPTU5QNPkzUYYGve9IDeA3fTjzjsZmHM5xzegW1iJ4p7WS1mxosJ8xaU4vWE35cJljuD4BLu1scmvzDOQXNMurA2As7g4vukJJkSJho6RST28mqSmcPdumd1E13r9xFnCJGPMtG4uabJ4//itOSA/BCxqJ9nb7WIgm9cfbLZR8uykJey08bOvGqn087USfFQpzuvUsInU3W6dqg83ATIHHV3HCEGK+0uLwwIuIgLiKxhgebWHp+0y+B76L79okmKqPXTf/zWL8SylKpLu/NM8xeMYl3IjQz96TOdU42EdeMPH3kagn2aqdnevo01Pc4+F7ruDc0fnoovwLys/Q11gmbXhoAKM6rbruVuID5se5UD7m1D0K1cRbm8B4+lAEohTJnIz4sJ34gUx3BfofA0+CYvHQL1zwRvgv6+MOBvgGyeDus4M=
     secret_access_key:
