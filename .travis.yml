@@ -4,19 +4,28 @@ node_js: 6.2.2
 script:
   - cp -r source/ build/
 
+-: &deploy
+  provider: s3
+  bucket: dash-connect-site
+  region: eu-west-1
+  acl: public_read
+  local_dir: build/
+  skip_cleanup: true
+  cache_control: public, max-age=86400
+  access_key_id:
+    secure: wETByA/iCuDX9R/60s5iX3jigkox6VQDiB3hf6xFeWWK5x9+TA5ocG+nwF3apraIjtl4HjCruA+iVB2JWZxHPMzVCl7brmflBnT4XnySc+hpyprYQifm56k4Z/Gxlzu40HZq3EXziRXpTMA1oLMRfEGMV9xbP1J5ffjdpr4f9AXoHtitt+Xa1cn99FXQFLCkTXz5A0yBTfKaHyCnQ9fWwsF9IF9Y5mbi+eNCfsj0wt9NCROgTg0GK2Hf0axTjz+fg0OeYP9vzXp+R+fb0HuHAEdRoEfOpwV7/T3LB8uHOO/12CctKWYrIPJ/ZozZ9tVM9Idf+wHqw8fwSzNmdJ7w+yw93MO/WGSfsHI5DLp03F0DRWD7T7lIdWvT1+04x8OSbHu6/1TqJHb0DZKRo0AwRdmVBx63tBIvutZecNiCVPhS0PUxwwwHXzmg0IznjRwyXTsJnwlYU7oei8wShONQQ+7DIYHNLu+SxqMuBq4AIivofNEeCHYJCDYirqTN406rYNf2dRBD3QKAGeeGqEv3D5GBpPTUYeWGNlJs6hjVNkWgsZIbWXxlDTAoXuu4HxH+eK1K2U7SnWGJW9TcPr0nz1BH0AXC3QTnqRKEL6iZZ5LZQgvTWRRbfcQ3xuRVussEtWQoaln3bNMGsmacDZFFEXCd8VPE0CXbUHQ0NSg6IUA=
+  secret_access_key:
+    secure: aB/giHIY5M1zdxhaKInaGcK81Av+26uHB1izxVVjkmKYz/cYTL3OTMGOP6c5JxUxF8xqjMdm8TJYDneCZ2cpuiPMxVayVDf1xKZ3R2Ur9Bx5nnGpHNppsNK0Ecnw0Sq+2MkPqkdjMStkpjIscbs3abFPgnd1Sf5DT2ckfDjSMDVaOOXkJwHEViXzYdyn9Kt+wp1TVFGI6p65IxkEi3lZu4PeqqgvoyTuXkl9T86985o7DcCFBm4MSiwqaUa+A6i09cK+Z2gCQFO/ms+jwRIOlcpWVaLxbunBantVoG+EQO6+sCZgU+k2VzcOoMVoLrv51+3aLrEUKfZDqSu9MOEU2BpCK2fVdRaGt/Mwal4dZPm8ZpmICbS0ibEed0nXuA2bc5zKvAvkaj9W6c0EX7bYMWl30rhtfOAONg+D58UnBNS5o3UMqNTjbDGPmInI/ZzpBVWy2jgdyRrD3yoZqCO59IwoNb4Wp9X/ccLieVOCXEGM0+9JElBrXTGhf5BPyOhBaqlVO/QZXb1SpsCQlj14PQ7cz7s5yUfqykEI45II2h3IzxEMsLgrlA064WYZTAAmsWyZ6RWGo3JO348+JcD9C/Dlqd9BRGJ5sPSAXE/Mt9TnyJdYWm8WIAn9AS8rHDTSfS6dqd+sav2ls3BucGdi7XYRMSEWsaHlWNlJvO9dcWg=
+
 deploy:
-  - provider: s3
-    bucket: dash-connect-site
-    region: eu-west-1
-    acl: public_read
-    local_dir: build/
-    upload_dir: $(git describe --tags --always --dirty)
-    skip_cleanup: true
-    cache_control: public, max-age=86400
-    access_key_id:
-      secure: wETByA/iCuDX9R/60s5iX3jigkox6VQDiB3hf6xFeWWK5x9+TA5ocG+nwF3apraIjtl4HjCruA+iVB2JWZxHPMzVCl7brmflBnT4XnySc+hpyprYQifm56k4Z/Gxlzu40HZq3EXziRXpTMA1oLMRfEGMV9xbP1J5ffjdpr4f9AXoHtitt+Xa1cn99FXQFLCkTXz5A0yBTfKaHyCnQ9fWwsF9IF9Y5mbi+eNCfsj0wt9NCROgTg0GK2Hf0axTjz+fg0OeYP9vzXp+R+fb0HuHAEdRoEfOpwV7/T3LB8uHOO/12CctKWYrIPJ/ZozZ9tVM9Idf+wHqw8fwSzNmdJ7w+yw93MO/WGSfsHI5DLp03F0DRWD7T7lIdWvT1+04x8OSbHu6/1TqJHb0DZKRo0AwRdmVBx63tBIvutZecNiCVPhS0PUxwwwHXzmg0IznjRwyXTsJnwlYU7oei8wShONQQ+7DIYHNLu+SxqMuBq4AIivofNEeCHYJCDYirqTN406rYNf2dRBD3QKAGeeGqEv3D5GBpPTUYeWGNlJs6hjVNkWgsZIbWXxlDTAoXuu4HxH+eK1K2U7SnWGJW9TcPr0nz1BH0AXC3QTnqRKEL6iZZ5LZQgvTWRRbfcQ3xuRVussEtWQoaln3bNMGsmacDZFFEXCd8VPE0CXbUHQ0NSg6IUA=
-    secret_access_key:
-      secure: aB/giHIY5M1zdxhaKInaGcK81Av+26uHB1izxVVjkmKYz/cYTL3OTMGOP6c5JxUxF8xqjMdm8TJYDneCZ2cpuiPMxVayVDf1xKZ3R2Ur9Bx5nnGpHNppsNK0Ecnw0Sq+2MkPqkdjMStkpjIscbs3abFPgnd1Sf5DT2ckfDjSMDVaOOXkJwHEViXzYdyn9Kt+wp1TVFGI6p65IxkEi3lZu4PeqqgvoyTuXkl9T86985o7DcCFBm4MSiwqaUa+A6i09cK+Z2gCQFO/ms+jwRIOlcpWVaLxbunBantVoG+EQO6+sCZgU+k2VzcOoMVoLrv51+3aLrEUKfZDqSu9MOEU2BpCK2fVdRaGt/Mwal4dZPm8ZpmICbS0ibEed0nXuA2bc5zKvAvkaj9W6c0EX7bYMWl30rhtfOAONg+D58UnBNS5o3UMqNTjbDGPmInI/ZzpBVWy2jgdyRrD3yoZqCO59IwoNb4Wp9X/ccLieVOCXEGM0+9JElBrXTGhf5BPyOhBaqlVO/QZXb1SpsCQlj14PQ7cz7s5yUfqykEI45II2h3IzxEMsLgrlA064WYZTAAmsWyZ6RWGo3JO348+JcD9C/Dlqd9BRGJ5sPSAXE/Mt9TnyJdYWm8WIAn9AS8rHDTSfS6dqd+sav2ls3BucGdi7XYRMSEWsaHlWNlJvO9dcWg=
+  - <<: *deploy
+    upload_dir: versions/commit/$TRAVIS_COMMIT
+  - <<: *deploy
+    upload_dir: versions/branch/$TRAVIS_BRANCH
+  - <<: *deploy
+    upload_dir: versions/tag/$TRAVIS_TAG
+    on:
+      tags: true
 
 notifications:
   email: false
