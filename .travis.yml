@@ -14,21 +14,17 @@ script:
   cache_control: public, max-age=86400 # TODO: Set multiple values
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_KEY_SECRET
-  on:
-    all_branches: true
+  on: { all_branches: true }
 
 deploy:
   - <<: *deploy
     upload_dir: versions/commit/$TRAVIS_COMMIT
   - <<: *deploy
     upload_dir: versions/branch/$TRAVIS_BRANCH
-    on:
-      all_branches: true
-      tags: false
+    on: { all_branches: true, tags: false }
   - <<: *deploy
     upload_dir: versions/tag/$TRAVIS_TAG
-    on:
-      tags: true
+    on: { tags: true }
 
 notifications:
   email: false
