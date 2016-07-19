@@ -1,4 +1,11 @@
+# Dependencies
+/node_modules
+
+# Build
+/build
+
+# OSX
 .DS_Store
-build
-npm-debug.log
-node_modules
+
+# NPM
+/npm-debug.log
