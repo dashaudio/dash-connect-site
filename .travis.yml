@@ -23,6 +23,7 @@ deploy:
   - <<: *deploy
     upload_dir: versions/branch/$TRAVIS_BRANCH
     on:
+      all_branches: true
       tags: false
   - <<: *deploy
     upload_dir: versions/tag/$TRAVIS_TAG
