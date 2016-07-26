@@ -109,13 +109,13 @@
 			moburst3 = new mojs.Burst({
 				parent: 			molinkEl,
 				left: 				'130%', top: '-70%',
-				count: 				8,
+				count: 				16,
 				radius: 			{0:90},
 				children: {
 					fill: 			[ '#FFFFFF', '#FFD46B', '#FFFFFF', '#FFD46B', '#FFFFFF', '#FFD46B' ],
-					duration: 		1500,
+					duration: 		1900,
 					delay: 			200,
-					easing: 		mojs.easing.bezier(0.1, 1, 0.3, 1)
+					easing: 		mojs.easing.bezier(0.1, 2, 0.3, 1)
 				}
 			}),
 			moburst4 = new mojs.Burst({
