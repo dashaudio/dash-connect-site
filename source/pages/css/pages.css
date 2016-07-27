@@ -8728,3 +8728,24 @@ sup.dollar {
   }
 }
 /*** Retina Display Images **/
+
+/*MAILCHIMP*/
+  .mc_embed_signup {
+    background:none; 
+    clear:left; 
+    font:20px; 
+    font-family:"proxima-nova",Helvetica,Arial,sans-serif;
+    padding: 0;
+  }
+  .mce-success-response {
+    color: #fff;
+  }
+  .mc_embed_signup input {
+    border: 2px solid #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 0;
+  }
+  .mce-success-response {
+    color: #ffffff;
+  }
